@@ -1,0 +1,50 @@
+@model List<MVC_Net8.Models.Lenguajes>
+@{
+    ViewData["Title"] = "Listado";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+
+<div class="row">
+    <div class="col-sm-8 offset-sm-2">
+        <h2>Lista Lenguajes</h2>
+        <a asp-controller="Lenguajes" asp-action="Nuevo" class="btn btn-success mb-3">Nuevo</a>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Fecha</th>
+                    <th>Nivel</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach(var leng in Model){
+                    <tr>
+                        <td>@leng.id</td>
+                        <td>@leng.nombre</td>
+                        <td>@(leng.fecha.HasValue ? leng.fecha.Value.ToString("dd/MM/yyyy") : "")</td>
+                        <td>@leng.nivel</td>
+                        <td>
+                            <a asp-controller="Lenguajes" asp-action="Editar" asp-route-id="@leng.id" class="btn btn-primary mb-3">Editar</a>
+                            <a asp-controller="Lenguajes" asp-action="Eliminar" asp-route-id="@leng.id" onclick="return confirmar()" class="btn btn-danger mb-3">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+@section Scripts{
+    <script>
+        function confirmar(){
+            return confirm("Estas seguro de eliminar?")
+        }
+    </script>
+}
