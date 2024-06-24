@@ -1,0 +1,17 @@
+Se instala extencion de paquetes nuget
+en la barra del buscado se escribe >nuget para agregar paquetes
+se agreguan los paquetes 
+    Microsoft.entityFrameworkCore, 
+    Microsoft.entityFrameworkCore.sqlServe,
+    Microsoft.entityFrameworkCore.tools
+
+en terminal se instalo (ya que no estaba aun instalado) dotnet tool install --global dotnet-ef
+si ya esta instalado se puede aplicar una migracion para que genere las tablas creadas en el Model y señaldas en el contexto
+
+windows Version: Add-Migration [nombre de la migracion]
+Mac Version: dotnet ef migrations add [nombre de la migracion]
+
+Despues para que se ejecuten estas opciones generadas
+windows Version: Update-database
+Mac Version: dotnet ef database update
+

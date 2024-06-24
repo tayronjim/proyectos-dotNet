@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/proyApiREST_Net8.props" />
+</Project>

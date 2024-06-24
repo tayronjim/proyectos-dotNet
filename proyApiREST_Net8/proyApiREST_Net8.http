@@ -1,0 +1,6 @@
+@proyApiREST_Net8_HostAddress = http://localhost:5182
+
+GET {{proyApiREST_Net8_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

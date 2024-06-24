@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/proyApiREST_Net8.props" />
+</Project>
